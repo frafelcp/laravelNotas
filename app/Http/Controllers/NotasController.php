@@ -30,4 +30,10 @@ class NotasController extends Controller
     	Note::create($data);
     	return redirect()->to('notes');
     }
+
+    public function show($note)
+    {
+        $note = Note::findOrFail($note);
+        return view('notes/details')->with('note', $note);
+    }
 }
