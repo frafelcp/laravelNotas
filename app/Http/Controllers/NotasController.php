@@ -12,6 +12,22 @@ class NotasController extends Controller
     public function index()
     {
     	$notes = Note::all();
-    	return view('notes', compact('notes'));
+    	return view('notes/index', compact('notes'));
+    }
+
+    public function create()
+    {
+    	return view('notes/create');
+    }
+
+    public function store()
+    {
+    	$this->validate(request(), [
+			'note' => ['required', 'max:200']
+		]);
+		
+    	$data = request()->all();
+    	Note::create($data);
+    	return redirect()->to('notes');
     }
 }

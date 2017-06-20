@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('notes', 'NotasController@index');
+
+Route::get('notes/create', 'NotasController@create');
+Route::post('notes', 'NotasController@store');
