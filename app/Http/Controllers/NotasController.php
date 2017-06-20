@@ -11,7 +11,7 @@ class NotasController extends Controller
 {
     public function index()
     {
-    	$notes = Note::all();
+    	$notes = Note::paginate(20);
     	return view('notes/index', compact('notes'));
     }
 
@@ -25,7 +25,7 @@ class NotasController extends Controller
     	$this->validate(request(), [
 			'note' => ['required', 'max:200']
 		]);
-		
+
     	$data = request()->all();
     	Note::create($data);
     	return redirect()->to('notes');

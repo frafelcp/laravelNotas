@@ -1,8 +1,9 @@
 <?php
 
+use App\Note;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class NotesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-        $this->call(NotesTableSeeder::class);
+        factory(Note::class)->times(100)->create();
     }
 }
