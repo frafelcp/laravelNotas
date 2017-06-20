@@ -15,7 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('notes', function(){
-	$notes = \App\Note::all();
-	return view('notes', compact('notes'));
-});
+Route::get('notes', 'NotasController@index');

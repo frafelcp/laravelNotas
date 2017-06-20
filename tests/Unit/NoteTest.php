@@ -14,10 +14,10 @@ class NoteTest extends BrowserKitTestCase
      *
      * @return void
      */
-    public function testNote()
-    {
-        Note::create(['note' => 'my first note']);
-        $this->visit('notes')
-    		->see('my first note');
-    }
+    // public function testNote()
+    // {
+    //     Note::create(['note' => 'my first note']);
+    //     $this->visit('notes')
+    // 		->see('my first note');
+    // }
 }
